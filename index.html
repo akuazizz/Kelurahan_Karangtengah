@@ -8,26 +8,62 @@
     html, body {
       height: 100%;
       margin: 0;
+      font-family: Arial, sans-serif;
     }
 
     body {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      font-family: Arial, sans-serif;
     }
 
-    header, footer {
+    /* Header */
+    .custom-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       background-color: #2e8b57;
       color: white;
-      text-align: center;
-      padding: 1rem;
+      padding: 0.5rem 2rem;
+      flex-wrap: wrap;
     }
 
-    nav a {
-      margin: 0 10px;
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .header-left img {
+      height: 60px;
+    }
+
+    .header-title h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .header-title p {
+      margin: 0;
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    .header-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .header-nav a {
       color: white;
       text-decoration: none;
+      font-weight: bold;
+    }
+
+    .header-nav a:hover {
+      text-decoration: underline;
     }
 
     main {
@@ -36,36 +72,77 @@
       text-align: center;
     }
 
-    h2 {
-      margin-bottom: 1rem;
+    img.full-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 0;
+      margin: 20px 0 30px 0; /* jarak bawah agar tidak rapat dengan footer */
+    }
+
+    footer {
+      background-color: #2e8b57;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    footer p {
+      margin: 0;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .custom-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-nav {
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Kelurahan Karangtengah</h1>
-    <nav>
-      <a href="index.html">Dashboard</a>
-      <a href="profil.html">Profil</a>
+
+  <!-- Header -->
+  <header class="custom-header">
+    <div class="header-left">
+      <img src="assets/img/logo.png" alt="Logo Kelurahan" />
+      <div class="header-title">
+        <h1>Kelurahan Karangtengah</h1>
+        <p>Kabupaten Banjarnegara</p>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <a href="index.html">Beranda</a>
+      <a href="profil.html">Profil Kelurahan</a>
       <a href="pengajuan.html">Pengajuan Surat</a>
-      <a href="pegawai.html">Profil Pegawai</a>
-      <a href="login.html">Login</a>
+      <a href="pegawai.html">Pegawai</a>
+      <a href="informasi.html">Informasi</a>
+      <a href="dokumen.html">Dokumen</a>
     </nav>
   </header>
 
+  <!-- Konten Utama -->
   <main>
     <h2>Selamat datang di Sistem Informasi Kelurahan Karangtengah</h2>
     <p>Layanan digital untuk masyarakat Karangtengah.</p>
   </main>
 
- <img 
-  src="assets/img/desa.jpeg" 
-  alt="Gambar Kelurahan Karangtengah" 
-  style="width: 100%; height: auto; display: block; border-radius: 0; margin: 20px 0 0 0;">
+  <!-- Gambar Utama -->
+  <img 
+    src="assets/img/desa.jpeg" 
+    alt="Gambar Kelurahan Karangtengah" 
+    class="full-banner"
+  >
 
-
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Kelurahan Karangtengah</p>
   </footer>
+
 </body>
 </html>
