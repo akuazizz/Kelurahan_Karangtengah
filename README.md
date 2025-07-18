@@ -10,20 +10,20 @@ Setiap pegawai ditampilkan dalam kotak profil yang dapat diklik untuk menampilka
 
 Fitur Utama:
 
-Halaman Dashboard dan Profil Kelurahan
+- Halaman Dashboard dan Profil Kelurahan
 
-Form Pengajuan Surat yang dapat diisi masyarakat
+- Form Pengajuan Surat yang dapat diisi masyarakat
 
-Profil Pegawai dalam bentuk grid 3x3 dengan modal biodata
+- Profil Pegawai dalam bentuk grid 3x3 dengan modal biodata
 
-Desain Responsif menggunakan CSS Grid dan media queries
+- Desain Responsif menggunakan CSS Grid dan media queries
 
-Tampilan UI yang sederhana dan informatif dengan warna dominan hijau
+- Tampilan UI yang sederhana dan informatif dengan warna dominan hijau
 
 Teknologi yang Digunakan:
 
-HTML5
+- HTML5
 
-CSS3 (tanpa framework)
+- CSS3 (tanpa framework)
 
-JavaScript (untuk modal popup biodata pegawai)
+- JavaScript (untuk modal popup biodata pegawai)
