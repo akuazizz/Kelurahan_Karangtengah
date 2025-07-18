@@ -8,22 +8,26 @@ Proyek ini merupakan pengembangan website sederhana untuk Kelurahan Karangtengah
 
 Setiap pegawai ditampilkan dalam kotak profil yang dapat diklik untuk menampilkan biodata lengkap, seperti tanggal lahir, jabatan, tugas, dan jobdesk. Tampilan dibuat responsif dan menarik dengan dominasi warna hijau yang mencerminkan identitas lingkungan dan kelembagaan desa.
 
-Fitur Utama:
+⭐ Fitur Utama:
 
-- Halaman Dashboard dan Profil Kelurahan
+- 🏠 Halaman Dashboard & Profil Kelurahan
 
-- Form Pengajuan Surat yang dapat diisi masyarakat
+- 📝 Form Pengajuan Surat online
 
-- Profil Pegawai dalam bentuk grid 3x3 dengan modal biodata
+- 🧑‍💼 Grid Profil Pegawai Interaktif (klik untuk lihat biodata)
 
-- Desain Responsif menggunakan CSS Grid dan media queries
+- 💬 Popup Modal Biodata (jabatan, tanggal lahir, tugas, jobdesk)
 
-- Tampilan UI yang sederhana dan informatif dengan warna dominan hijau
+- 📱 Desain Responsif untuk tampilan mobile & desktop
 
-Teknologi yang Digunakan:
+- 🎨 Tampilan UI bersih dan dominan warna hijau desa
 
-- HTML5
+🛠️ Teknologi yang Digunakan
 
-- CSS3 (tanpa framework)
+- 🌐 HTML5 – Struktur halaman
 
-- JavaScript (untuk modal popup biodata pegawai)
+- 🎨 CSS3 – Desain, layout, dan styling (Grid & Media Queries)
+
+- ⚙️ JavaScript – Interaksi modal biodata pegawai (popup)
+
+- 📁 Asset statis – Gambar pegawai & logo dimuat lokal
