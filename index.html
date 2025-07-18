@@ -17,7 +17,7 @@
       min-height: 100vh;
     }
 
-    /* Header */
+    /* Header style */
     .custom-header {
       display: flex;
       justify-content: space-between;
@@ -56,13 +56,16 @@
       gap: 15px;
     }
 
-    .header-nav a {
+    .header-nav button {
       color: white;
-      text-decoration: none;
       font-weight: bold;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
     }
 
-    .header-nav a:hover {
+    .header-nav button:hover {
       text-decoration: underline;
     }
 
@@ -72,12 +75,11 @@
       text-align: center;
     }
 
-    img.full-banner {
+    .full-banner {
       width: 100%;
       height: auto;
       display: block;
-      border-radius: 0;
-      margin: 20px 0 30px 0; /* jarak bawah agar tidak rapat dengan footer */
+      margin: 20px 0 30px 0;
     }
 
     footer {
@@ -87,9 +89,35 @@
       padding: 2rem;
     }
 
-    footer p {
-      margin: 0;
-      font-weight: bold;
+    .section {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .gallery-item {
+      width: 200px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .gallery-item p {
+      text-align: center;
+      margin-top: 5px;
     }
 
     @media (max-width: 768px) {
@@ -97,6 +125,7 @@
         flex-direction: column;
         align-items: flex-start;
       }
+
       .header-nav {
         justify-content: center;
         width: 100%;
@@ -117,32 +146,142 @@
       </div>
     </div>
     <nav class="header-nav">
-      <a href="index.html">Beranda</a>
-      <a href="profil.html">Profil Kelurahan</a>
-      <a href="pengajuan.html">Pengajuan Surat</a>
-      <a href="pegawai.html">Pegawai</a>
-      <a href="informasi.html">Informasi</a>
-      <a href="dokumen.html">Dokumen</a>
+      <!-- Tombol Navigasi -->
+      <button onclick="showSection('beranda')">Beranda</button>
+      <button onclick="showSection('profil')">Informasi</button>
+      <button onclick="showSection('pengajuan')">Pengajuan Surat</button>
+      <button onclick="showSection('pegawai')">Pegawai</button>
+      <button onclick="showSection('dokumentasi')">Dokumentasi</button>
+      <button onclick="showSection('login')">Login</button>
     </nav>
   </header>
 
   <!-- Konten Utama -->
   <main>
-    <h2>Selamat datang di Sistem Informasi Kelurahan Karangtengah</h2>
-    <p>Layanan digital untuk masyarakat Karangtengah.</p>
-  </main>
 
-  <!-- Gambar Utama -->
-  <img 
-    src="assets/img/desa.jpeg" 
-    alt="Gambar Kelurahan Karangtengah" 
-    class="full-banner"
-  >
+    <!-- BERANDA -->
+    <section id="beranda" class="section active">
+      <h2>Selamat datang di Sistem Informasi Kelurahan Karangtengah</h2>
+      <p>Layanan digital untuk masyarakat Karangtengah.</p>
+      <img src="assets/img/desa.jpeg" alt="Gambar Kelurahan Karangtengah" class="full-banner">
+    </section>
+
+    <!-- PROFIL / INFORMASI UMUM -->
+    <section id="profil" class="section">
+      <div style="max-width: 1000px; margin: 0 auto; padding: 20px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 30px;">
+          <div style="flex: 1; min-width: 280px;">
+            <img src="assets/img/grafik.jpeg" alt="Foto Kelurahan" style="width: 100%; max-width: 300px; border-radius: 8px; border: 1px solid #ccc;">
+          </div>
+          <div style="flex: 2; min-width: 280px; text-align: left;">
+            <h2>Informasi Umum</h2>
+            <p>Kelurahan Karangtengah adalah wilayah administratif di Kecamatan Banjarnegara yang memiliki peran strategis dalam pelayanan publik dan pembangunan.</p>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+              <tr style="background-color: #f2f2f2;">
+                <th style="padding: 10px; border: 1px solid #ccc;">Kategori</th>
+                <th style="padding: 10px; border: 1px solid #ccc;">Keterangan</th>
+              </tr>
+              <tr><td style="padding: 10px; border: 1px solid #ccc;">Alamat</td><td style="padding: 10px; border: 1px solid #ccc;">Jl. Raya Karangtengah No. 123</td></tr>
+              <tr><td style="padding: 10px; border: 1px solid #ccc;">Kecamatan</td><td style="padding: 10px; border: 1px solid #ccc;">Banjarnegara</td></tr>
+              <tr><td style="padding: 10px; border: 1px solid #ccc;">RT / RW</td><td style="padding: 10px; border: 1px solid #ccc;">12 RT / 4 RW</td></tr>
+              <tr><td style="padding: 10px; border: 1px solid #ccc;">Jumlah Penduduk</td><td style="padding: 10px; border: 1px solid #ccc;">~4.500 jiwa</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PENGAJUAN SURAT -->
+    <section id="pengajuan" class="section">
+      <div style="max-width: 800px; margin: 0 auto; text-align: left;">
+        <h2>Form Pengajuan Surat</h2>
+        <form>
+          <label>Nama Lengkap:</label>
+          <input type="text" style="width: 100%; padding: 10px; margin-bottom: 10px;">
+
+          <label>NIK:</label>
+          <input type="text" style="width: 100%; padding: 10px; margin-bottom: 10px;">
+
+          <label>Jenis Surat:</label>
+          <select style="width: 100%; padding: 10px; margin-bottom: 10px;">
+            <option>-- Pilih Jenis Surat --</option>
+            <option>Permohonan KTP</option>
+            <option>Permohonan KK</option>
+            <option>Surat Domisili</option>
+            <option>Surat Keterangan Usaha</option>
+          </select>
+
+          <label>Keperluan:</label>
+          <textarea rows="4" style="width: 100%; padding: 10px; margin-bottom: 20px;"></textarea>
+
+          <button type="submit" style="background-color: #2e8b57; color: white; padding: 12px; width: 100%; border: none;">Kirim</button>
+        </form>
+      </div>
+    </section>
+
+  <!-- PEGAWAI -->
+<section id="pegawai" class="section">
+  <h2 style="text-align: center;">Daftar Pegawai Kelurahan Karangtengah</h2>
+  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+
+    <!-- Kartu Pegawai 1 -->
+    <div style="border: 1px solid #ddd; border-radius: 10px; padding: 20px; text-align: center; width: 250px;">
+      <img src="assets/img/hi.jpg" alt="Devrin Anggun Saputri" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
+      <h3>Devrin Anggun Saputri</h3>
+      <p>Kepala Kelurahan</p>
+    </div>
+
+    <!-- Kartu Pegawai 2 -->
+    <div style="border: 1px solid #ddd; border-radius: 10px; padding: 20px; text-align: center; width: 250px;">
+      <img src="assets/img/hi.jpg" alt="Salsha Chalista" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
+      <h3>Salsha Chalista</h3>
+      <p>Sekretaris</p>
+    </div>
+
+    <!-- Kartu Pegawai 3 -->
+    <div style="border: 1px solid #ddd; border-radius: 10px; padding: 20px; text-align: center; width: 250px;">
+      <img src="assets/img/hi.jpg" alt="Muhammad Abdul Aziz" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
+      <h3>Muhammad Abdul Aziz</h3>
+      <p>Bendahara</p>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- DOKUMENTASI -->
+    <section id="dokumentasi" class="section">
+      <h2>Dokumentasi Kegiatan</h2>
+      <div class="gallery">
+        <div class="gallery-item"><img src="assets/img/grafik.jpeg" alt="Kegiatan 1"><p>Gotong Royong</p></div>
+        <div class="gallery-item"><img src="assets/img/grafik.jpeg" alt="Kegiatan 2"><p>Musyawarah Warga</p></div>
+        <div class="gallery-item"><img src="assets/img/grafik.jpeg" alt="Kegiatan 3"><p>Pelatihan Digital</p></div>
+      </div>
+    </section>
+
+    <!-- LOGIN -->
+    <section id="login" class="section">
+      <h2>Login Admin</h2>
+      <p>Form login akan ditambahkan di sini.</p>
+    </section>
+
+  </main>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Kelurahan Karangtengah</p>
   </footer>
+
+  <!-- SCRIPT UNTUK TOMBOL NAVIGASI -->
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    window.onload = () => showSection('beranda');
+  </script>
 
 </body>
 </html>
