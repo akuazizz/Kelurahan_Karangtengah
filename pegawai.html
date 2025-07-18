@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Profil Pegawai - Kelurahan Karangtengah</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header, footer {
+      background-color: #2e8b57;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+    }
+
+    .pegawai-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 2rem;
+    }
+
+    .pegawai-card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      background-color: #f9f9f9;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .pegawai-card:hover {
+      transform: scale(1.03);
+    }
+
+    .pegawai-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .pegawai-card h3 {
+      margin: 0.5rem 0 0.2rem;
+      font-size: 1.1rem;
+    }
+
+    .pegawai-card p {
+      margin: 0;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 0;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 8px;
+    }
+
+    .modal-header {
+      background-color: #2e8b57;
+      color: white;
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .modal-body {
+      padding: 20px;
+    }
+
+    .close {
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 10px 15px 0 0;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    .close:hover {
+      color: black;
+    }
+
+    @media (max-width: 992px) {
+      .pegawai-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .pegawai-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Profil Pegawai Kelurahan</h1>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="profil.html">Profil</a>
+      <a href="pengajuan.html">Pengajuan Surat</a>
+      <a href="pegawai.html">Profil Pegawai</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 style="text-align: center;">Daftar Pegawai Kelurahan Karangtengah</h2>
+    <div class="pegawai-container">
+      <div class="pegawai-card" onclick="showModal('devrin')">
+        <img src="assets/img/devrin.jpg" alt="Devrin" />
+        <h3>Devrin Anggun Saputri</h3>
+        <p>Kepala Kelurahan</p>
+      </div>
+
+      <div class="pegawai-card" onclick="showModal('salsha')">
+        <img src="assets/img/salsha.jpg" alt="Salsha" />
+        <h3>Salsha Chalista</h3>
+        <p>Sekretaris</p>
+      </div>
+
+      <div class="pegawai-card" onclick="showModal('aziz')">
+        <img src="assets/img/aziz.jpg" alt="Aziz" />
+        <h3>Muhammad Abdul Aziz</h3>
+        <p>Bendahara</p>
+      </div>
+
+      <div class="pegawai-card" onclick="showModal('radit')">
+        <img src="assets/img/radit.png" alt="Raditya" />
+        <h3>Raditya</h3>
+        <p>Sek. Pelayanan</p>
+      </div>
+
+      <div class="pegawai-card" onclick="showModal('meka')">
+        <img src="assets/img/meka.png" alt="Eka" />
+        <h3>Muhammad Eka</h3>
+        <p>Sek. Kependudukan</p>
+      </div>
+
+      <div class="pegawai-card" onclick="showModal('atika')">
+        <img src="assets/img/atika.png" alt="Atika" />
+        <h3>Atika Aji Hadiyani</h3>
+        <p>Sek. Ekonomi Desa</p>
+      </div>
+
+      <div class="pegawai-card" onclick="showModal('rahma')">
+        <img src="assets/img/rahma.png" alt="Rahma" />
+        <h3>Rahma Eka Safitri</h3>
+        <p>Sek. Informasi & Layanan</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Kelurahan Karangtengah</p>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="document.getElementById('modal').style.display='none'">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script>
+    const biodata = {
+      devrin: {
+        nama: "Devrin Anggun Saputri",
+        jabatan: "Kepala Kelurahan",
+        tgl: "10 Januari 1987",
+        tugas: "Memimpin penyelenggaraan pemerintahan dan pelayanan masyarakat.",
+        jobdesk: "Mengawasi kegiatan operasional dan pengambilan keputusan strategis kelurahan."
+      },
+      salsha: {
+        nama: "Salsha Chalista",
+        jabatan: "Sekretaris",
+        tgl: "5 Maret 1992",
+        tugas: "Administrasi surat menyurat dan dokumentasi.",
+        jobdesk: "Membantu kepala kelurahan dalam tata usaha dan agenda."
+      },
+      aziz: {
+        nama: "Muhammad Abdul Aziz",
+        jabatan: "Bendahara",
+        tgl: "12 Mei 1990",
+        tugas: "Mengelola keuangan kelurahan.",
+        jobdesk: "Membuat laporan kas, anggaran dan belanja."
+      },
+      radit: {
+        nama: "Raditya",
+        jabatan: "Sek. Pelayanan",
+        tgl: "22 Juli 1991",
+        tugas: "Pelayanan publik warga.",
+        jobdesk: "Melayani keperluan administrasi warga."
+      },
+      meka: {
+        nama: "Muhammad Eka",
+        jabatan: "Sek. Kependudukan",
+        tgl: "17 Agustus 1993",
+        tugas: "Pendataan dan perekaman data warga.",
+        jobdesk: "Membantu proses pembuatan KTP, KK, dan surat domisili."
+      },
+      atika: {
+        nama: "Atika Aji Hadiyani",
+        jabatan: "Sek. Ekonomi Desa",
+        tgl: "9 Oktober 1994",
+        tugas: "Pendataan UMKM dan pemberdayaan ekonomi lokal.",
+        jobdesk: "Mengelola program ekonomi kreatif dan pelatihan."
+      },
+      rahma: {
+        nama: "Rahma Eka Safitri",
+        jabatan: "Sek. Informasi & Layanan",
+        tgl: "25 Desember 1995",
+        tugas: "Pengelolaan informasi dan aduan masyarakat.",
+        jobdesk: "Menjadi penghubung antara warga dan pelayanan digital."
+      }
+    };
+
+    function showModal(id) {
+      const pegawai = biodata[id];
+      const isi = `
+        <div class="modal-header">Biodata</div>
+        <div class="modal-body">
+          <h3>${pegawai.nama}</h3>
+          <p><strong>Jabatan:</strong> ${pegawai.jabatan}</p>
+          <p><strong>Tanggal Lahir:</strong> ${pegawai.tgl}</p>
+          <p><strong>Tugas:</strong> ${pegawai.tugas}</p>
+          <p><strong>Jobdesk:</strong> ${pegawai.jobdesk}</p>
+        </div>
+      `;
+      document.getElementById("modal-body").innerHTML = isi;
+      document.getElementById("modal").style.display = "block";
+    }
+  </script>
+</body>
+</html>
