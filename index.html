@@ -17,7 +17,6 @@
       min-height: 100vh;
     }
 
-    /* Header style */
     .custom-header {
       display: flex;
       justify-content: space-between;
@@ -97,27 +96,69 @@
       display: block;
     }
 
-    .gallery {
+    .news-section {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 20px;
+      justify-content: space-between;
+      margin-top: 2rem;
+      text-align: left;
     }
 
-    .gallery-item {
-      width: 200px;
+    .news-main {
+      flex: 3;
+      margin-right: 2rem;
     }
 
-    .gallery-item img {
-      width: 100%;
+    .news-box {
+      display: flex;
+      margin-bottom: 1.5rem;
+    }
+
+    .news-box img {
+      width: 150px;
       height: auto;
       border-radius: 5px;
+      margin-right: 1rem;
     }
 
-    .gallery-item p {
-      text-align: center;
-      margin-top: 5px;
+    .news-box button {
+      background-color: #2e8b57;
+      color: white;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .side-panel {
+      flex: 1;
+    }
+
+    .panel-title {
+      color: #2e8b57;
+    }
+
+    .panel-box {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .panel-box-header {
+      background-color: #2e8b57;
+      color: white;
+      padding: 0.5rem;
+      font-weight: bold;
+    }
+
+    .panel-box button {
+      background-color: #2e8b57;
+      color: white;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 0.5rem;
     }
 
     @media (max-width: 768px) {
@@ -130,6 +171,14 @@
         justify-content: center;
         width: 100%;
         margin-top: 10px;
+      }
+
+      .news-section {
+        flex-direction: column;
+      }
+
+      .news-main {
+        margin-right: 0;
       }
     }
   </style>
@@ -146,7 +195,6 @@
       </div>
     </div>
     <nav class="header-nav">
-      <!-- Tombol Navigasi -->
       <button onclick="showSection('beranda')">Beranda</button>
       <button onclick="showSection('profil')">Informasi</button>
       <button onclick="showSection('pengajuan')">Pengajuan Surat</button>
@@ -156,7 +204,7 @@
     </nav>
   </header>
 
-  <!-- Konten Utama -->
+  <!-- Main Content -->
   <main>
 
     <!-- BERANDA -->
@@ -164,6 +212,67 @@
       <h2>Selamat datang di Sistem Informasi Kelurahan Karangtengah</h2>
       <p>Layanan digital untuk masyarakat Karangtengah.</p>
       <img src="assets/img/desa.jpeg" alt="Gambar Kelurahan Karangtengah" class="full-banner">
+
+      <!-- Tambahan Berita, Pengumuman, Agenda -->
+      <div class="news-section">
+
+<!-- Berita Lainnya -->
+<div style="margin-top: 2rem;">
+  <h3 style="color: #2e8b57;">Berita Lainnya</h3>
+  <hr style="border-top: 2px solid #2e8b57; width: 100px; margin-bottom: 1rem;">
+
+  <!-- Item Berita 1 -->
+  <div style="display: flex; margin-bottom: 1rem;">
+    <img src="assets/img/warga.jpg" alt="Berita 3" style="width: 120px; height: auto; border-radius: 5px; margin-right: 1rem;">
+    <div>
+      <strong>Warga Karangtengah Terima Pelatihan Pembuatan Peta Administrasi</strong><br>
+      <small>Berita</small>
+      <p>Kegiatan pelatihan peta wilayah berlangsung di balai desa dan diikuti oleh perangkat desa serta mahasiswa KKN.</p>
+      <button style="background-color: #2e8b57; color: white; border: none; padding: 0.4rem 0.8rem; border-radius: 4px;">Selengkapnya</button>
+    </div>
+  </div>
+
+  <!-- Item Berita 2 -->
+  <div style="display: flex; margin-bottom: 1rem;">
+    <img src="assets/img/wargaa.jpg" alt="Berita 4" style="width: 120px; height: auto; border-radius: 5px; margin-right: 1rem;">
+    <div>
+      <strong>Remaja Karangtengah Aktif Ikuti Penyuluhan Anti Narkoba</strong><br>
+      <small>Berita</small>
+      <p>Penyuluhan bekerja sama dengan BNN berlangsung dengan interaktif dan edukatif di aula kantor kelurahan.</p>
+      <button style="background-color: #2e8b57; color: white; border: none; padding: 0.4rem 0.8rem; border-radius: 4px;">Selengkapnya</button>
+    </div>
+  </div>
+
+  <!-- Tombol Lihat Semua -->
+  <div style="text-align: center; margin-top: 1.5rem;">
+    <button style="background-color: #2e8b57; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 5px; font-weight: bold;">Lihat Semua Berita</button>
+  </div>
+</div>
+
+
+        
+
+        <!-- Panel Pengumuman dan Agenda -->
+        <div class="side-panel">
+          <!-- Pengumuman -->
+          <h3 class="panel-title">Pengumuman</h3>
+          <hr style="border-top: 2px solid #2e8b57; width: 100px;">
+          <div class="panel-box">
+            <div class="panel-box-header">Contoh Pengumuman Kelurahan</div>
+            <p>What is Lorem Ipsum? Lorem Ipsum is simply dummy text of ...</p>
+            <button>Selengkapnya</button>
+          </div>
+
+          <!-- Agenda -->
+          <h3 class="panel-title">Agenda <span style="color: black;">Kegiatan</span></h3>
+          <hr style="border-top: 2px solid #2e8b57; width: 100px;">
+          <div class="panel-box">
+            <strong>Contoh Agenda Kabupaten</strong>
+            <p>What is Lorem Ipsum? Lorem Ipsum is simply dummy text of ...</p>
+            <button>Lihat Agenda</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- PROFIL / INFORMASI UMUM -->
