@@ -181,93 +181,12 @@
         margin-right: 0;
       }
     }
-    /* Dropdown container */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown button inherits style */
-.dropdown > button {
-  background: none;
-  color: white;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  padding: 0;
-}
-
-/* Dropdown content */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #444;
-  min-width: 220px;
-  z-index: 1;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-/* Dropdown links */
-.dropdown-content a {
-  color: white;
-  padding: 10px 16px;
-  display: block;
-  text-decoration: none;
-}
-
-.dropdown-content a:hover {
-  background-color: #2e8b57;
-}
-
-/* Tampilkan dropdown saat hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.beranda-section {
-    display: flex;
-    flex-wrap: wrap;
-    min-height: 100vh;
-  }
-
-  .beranda-text {
-    background-color: #2e8b57; /* hijau gelap seperti contoh */
-    color: white;
-    flex: 1;
-    padding: 60px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .beranda-text h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    line-height: 1.3;
-  }
-
-  .beranda-text p {
-    font-size: 1.1rem;
-  }
-
-  .beranda-image {
-    flex: 1;
-  }
-
-  .beranda-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
   </style>
 </head>
 <body>
 
   <!-- Header -->
-  <header class="custom-header" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 999; background-color: #2e8b57;">
+  <header class="custom-header">
     <div class="header-left">
       <img src="assets/img/logo.png" alt="Logo Kelurahan" />
       <div class="header-title">
@@ -281,7 +200,6 @@
       <button onclick="showSection('pengajuan')">Pengajuan Surat</button>
       <button onclick="showSection('pegawai')">Pegawai</button>
       <button onclick="showSection('dokumentasi')">Dokumentasi</button>
-      <button onclick="showSection('kontak kami')">Kontak Kami</button>
       <button onclick="showSection('login')">Login</button>
     </nav>
   </header>
@@ -290,26 +208,21 @@
   <main>
 
     <!-- BERANDA -->
-<section id="beranda" class="beranda-section">
-  <div class="beranda-text">
-    <h2>Selamat Datang<br>Website Resmi<br>Kelurahan Karangtengah</h2>
-    <p>Sumber informasi terbaru tentang pemerintahan<br>di Kelurahan Karangtengah</p>
-  </div>
-  <div class="beranda-image">
-    <img src="assets/img/desa.jpeg" alt="Gambar Kelurahan Karangtengah">
-  </div>
-</section>
+    <section id="beranda" class="section active">
+      <h2>Selamat datang di Sistem Informasi Kelurahan Karangtengah</h2>
+      <p>Layanan digital untuk masyarakat Karangtengah.</p>
+      <img src="assets/img/desa.jpeg" alt="Gambar Kelurahan Karangtengah" class="full-banner">
 
       <!-- Tambahan Berita, Pengumuman, Agenda -->
       <div class="news-section">
 
-    <!-- Berita Lainnya -->
-    <div style="margin-top: 2rem;">
-    <h3 style="color: #2e8b57;">Berita Lainnya</h3>
-    <hr style="border-top: 2px solid #2e8b57; width: 100px; margin-bottom: 1rem;">
+<!-- Berita Lainnya -->
+<div style="margin-top: 2rem;">
+  <h3 style="color: #2e8b57;">Berita Lainnya</h3>
+  <hr style="border-top: 2px solid #2e8b57; width: 100px; margin-bottom: 1rem;">
 
-    <!-- Item Berita 1 -->
-    <div style="display: flex; margin-bottom: 1rem;">
+  <!-- Item Berita 1 -->
+  <div style="display: flex; margin-bottom: 1rem;">
     <img src="assets/img/warga.jpg" alt="Berita 3" style="width: 120px; height: auto; border-radius: 5px; margin-right: 1rem;">
     <div>
       <strong>Warga Karangtengah Terima Pelatihan Pembuatan Peta Administrasi</strong><br>
@@ -319,22 +232,25 @@
     </div>
   </div>
 
-    <!-- Item Berita 2 -->
-    <div style="display: flex; margin-bottom: 1rem;">
-      <img src="assets/img/wargaa.jpg" alt="Berita 4" style="width: 120px; height: auto; border-radius: 5px; margin-right: 1rem;">
-      <div>
-        <strong>Remaja Karangtengah Aktif Ikuti Penyuluhan Anti Narkoba</strong><br>
-        <small>Berita</small>
-        <p>Penyuluhan bekerja sama dengan BNN berlangsung dengan interaktif dan edukatif di aula kantor kelurahan.</p>
-        <button style="background-color: #2e8b57; color: white; border: none; padding: 0.4rem 0.8rem; border-radius: 4px;">Selengkapnya</button>
-      </div>
+  <!-- Item Berita 2 -->
+  <div style="display: flex; margin-bottom: 1rem;">
+    <img src="assets/img/wargaa.jpg" alt="Berita 4" style="width: 120px; height: auto; border-radius: 5px; margin-right: 1rem;">
+    <div>
+      <strong>Remaja Karangtengah Aktif Ikuti Penyuluhan Anti Narkoba</strong><br>
+      <small>Berita</small>
+      <p>Penyuluhan bekerja sama dengan BNN berlangsung dengan interaktif dan edukatif di aula kantor kelurahan.</p>
+      <button style="background-color: #2e8b57; color: white; border: none; padding: 0.4rem 0.8rem; border-radius: 4px;">Selengkapnya</button>
     </div>
+  </div>
 
   <!-- Tombol Lihat Semua -->
   <div style="text-align: center; margin-top: 1.5rem;">
     <button style="background-color: #2e8b57; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 5px; font-weight: bold;">Lihat Semua Berita</button>
   </div>
 </div>
+
+
+        
 
         <!-- Panel Pengumuman dan Agenda -->
         <div class="side-panel">
@@ -360,7 +276,7 @@
     </section>
 
     <!-- PROFIL / INFORMASI UMUM -->
-    <section id="profil" class="section" style="margin-bottom: 80px;">
+    <section id="profil" class="section">
       <div style="max-width: 1000px; margin: 0 auto; padding: 20px;">
         <div style="display: flex; flex-wrap: wrap; gap: 30px;">
           <div style="flex: 1; min-width: 280px;">
@@ -407,14 +323,13 @@
           <label>Keperluan:</label>
           <textarea rows="4" style="width: 100%; padding: 10px; margin-bottom: 20px;"></textarea>
 
-          <button type="submit" style="background-color: #2e8b57; color: white; padding: 12px; width: 100%; border: none; margin-bottom: 40px;">Kirim</button>
-
+          <button type="submit" style="background-color: #2e8b57; color: white; padding: 12px; width: 100%; border: none;">Kirim</button>
         </form>
       </div>
     </section>
 
   <!-- PEGAWAI -->
-<section id="pegawai" class="section" style="margin-bottom: 80px;">
+<section id="pegawai" class="section">
   <h2 style="text-align: center;">Daftar Pegawai Kelurahan Karangtengah</h2>
   <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
 
@@ -443,102 +358,23 @@
 </section>
 
 
-   <!-- DOKUMENTASI -->
-<section id="dokumentasi" class="section">
-  <h2 style="text-align: center;">Dokumentasi Kegiatan</h2>
-  <div class="gallery" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
-    
-    <div class="gallery-item" style="width: 30%; max-width: 220px; text-align: center;">
-      <img src="assets/img/dokum.jpg" alt="Kegiatan 1" style="width: 100%; border-radius: 8px;">
-      <p>Gotong Royong</p>
-    </div>
-
-    <div class="gallery-item" style="width: 30%; max-width: 220px; text-align: center;">
-      <img src="assets/img/dokum.jpg" alt="Kegiatan 2" style="width: 100%; border-radius: 8px;">
-      <p>Musyawarah Warga</p>
-    </div>
-
-    <div class="gallery-item" style="width: 30%; max-width: 220px; text-align: center;">
-      <img src="assets/img/dokum.jpg" alt="Kegiatan 3" style="width: 100%; border-radius: 8px;">
-      <p>Pelatihan Digital</p>
-    </div>
-
-    <div class="gallery-item" style="width: 30%; max-width: 220px; text-align: center;">
-      <img src="assets/img/dokum.jpg" alt="Kegiatan 4" style="width: 100%; border-radius: 8px;">
-      <p>Pembinaan Kader</p>
-    </div>
-
-    <div class="gallery-item" style="width: 30%; max-width: 220px; text-align: center;">
-      <img src="assets/img/dokum.jpg" alt="Kegiatan 5" style="width: 100%; border-radius: 8px;">
-      <p>Rapat Warga</p>
-    </div>
-
-    <div class="gallery-item" style="width: 30%; max-width: 220px; text-align: center;">
-      <img src="assets/img/dokum.jpg" alt="Kegiatan 6" style="width: 100%; border-radius: 8px;">
-      <p>Baksos Karangtengah</p>
-    </div>
-
-  </div>
-</section>
-
+    <!-- DOKUMENTASI -->
+    <section id="dokumentasi" class="section">
+      <h2>Dokumentasi Kegiatan</h2>
+      <div class="gallery">
+        <div class="gallery-item"><img src="assets/img/grafik.jpeg" alt="Kegiatan 1"><p>Gotong Royong</p></div>
+        <div class="gallery-item"><img src="assets/img/grafik.jpeg" alt="Kegiatan 2"><p>Musyawarah Warga</p></div>
+        <div class="gallery-item"><img src="assets/img/grafik.jpeg" alt="Kegiatan 3"><p>Pelatihan Digital</p></div>
+      </div>
+    </section>
 
     <!-- LOGIN -->
-    <section id="login" class="section" style="margin-bottom: 80px;">
-  <div style="max-width: 400px; margin: 0 auto; padding: 2rem; border: 1px solid #ccc; border-radius: 10px;">
-    <h2 style="text-align: center; color: #2e8b57;">Login Admin</h2>
-    <form onsubmit="return false;" style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
-      <div style="text-align: left;">
-        <label for="username" style="display: block; margin-bottom: 5px; font-weight: bold;">Username</label>
-        <input type="text" id="username" placeholder="Masukkan username" required
-               style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
-      </div>
-      <div style="text-align: left;">
-        <label for="password" style="display: block; margin-bottom: 5px; font-weight: bold;">Password</label>
-        <input type="password" id="password" placeholder="Masukkan password" required
-               style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
-      </div>
-      <button type="submit"
-              style="padding: 12px; background-color: #2e8b57; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
-        Login
-      </button>
-      <p style="text-align: center; color: gray; font-size: 0.9rem;">Hanya untuk petugas Kelurahan Karangtengah.</p>
-    </form>
-  </div>
-</section>
+    <section id="login" class="section">
+      <h2>Login Admin</h2>
+      <p>Form login akan ditambahkan di sini.</p>
+    </section>
 
-<!-- LOKASI & KONTAK -->
-<section id="lokasi-kontak" style="padding: 2rem 0; background-color: #f9f9f9;">
-  <div style="max-width: 1100px; margin: auto;">
-    <!-- Maps -->
-    <div style="margin-bottom: 2rem;">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.635158185695!2d109.6816003!3d-7.4076048999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7aa948af060ff3%3A0x1dbd9e7ed8bb19aa!2sKelurahan%20Karangtengah!5e0!3m2!1sen!2sid!4v1721533900000!5m2!1sen!2sid" 
-        width="100%" 
-        height="300" 
-        style="border: 1px solid #ccc; border-radius: 10px;" 
-        allowfullscreen="" 
-        loading="lazy">
-      </iframe>
-    </div>
-
-    <!-- Kontak -->
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; color: #0a0a0a; line-height: 1.6; gap: 20px; padding: 1rem 0;">
-  <div style="flex: 1 1 300px;">
-    <p><strong>Alamat:</strong><br>
-    Jl. Raya Karangtengah No.70, Karangtengah, Kec. Banjarnegara, Kab. Banjarnegara, Jawa Tengah 53416</p>
-  </div>
-  <div style="flex: 1 1 300px;">
-    <p><strong>Email:</strong><br>
-    <a href="mailto:kelurahan.karangtengah@gmail.com" style="color: inherit; text-decoration: none;">
-      kel_karangtengah@banjarnegarakab.go.id
-    </a></p>
-  </div>
-  <div style="flex: 1 1 300px;">
-    <p><strong>Telepon:</strong><br>
-    0286 594903</p>
-  </div>
-</div>
-</section>
+  </main>
 
   <!-- Footer -->
   <footer>
